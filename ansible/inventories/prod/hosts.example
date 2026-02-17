@@ -1,0 +1,13 @@
+# /opt/ansible/inventories/prod/hosts
+# Inventario de servidores Windows
+# Copiar a hosts y ajustar valores
+
+[windows]
+SERVER01.dominio.local
+SERVER02.dominio.local
+SERVER03.dominio.local
+
+[windows:vars]
+ansible_connection=winrm
+ansible_winrm_transport=ntlm
+ansible_winrm_port=5985

@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+ENV/
+
+# Configuración sensible (usar archivos .example)
+azure_auth.yml
+windows.yml
+!*.example
+
+# Logs
+logs/
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Certificados y claves
+*.key
+*.crt
+*.csr
+*.pem
+
+# Archivos de backup
+*.bkp
+*.backup
+
+# Static files (excepto .gitkeep)
+static/*
+!static/.gitkeep

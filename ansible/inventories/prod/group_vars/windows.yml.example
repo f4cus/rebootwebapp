@@ -1,0 +1,7 @@
+# /opt/ansible/inventories/prod/group_vars/windows.yml
+# Credenciales para conexión WinRM
+# Copiar a windows.yml y ajustar valores
+# NOTA: Considerar usar ansible-vault para producción
+
+ansible_user: DOMINIO\usuario_servicio
+ansible_password: "password_aqui"

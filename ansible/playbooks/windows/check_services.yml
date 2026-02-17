@@ -1,0 +1,21 @@
+# Playbook para consultar estado de servicios Windows
+
+---
+- name: Consultar estado de servicios Windows
+  hosts: "{{ target_host }}"
+  gather_facts: no
+  timeout: 30
+
+  tasks:
+    - name: Obtener estado de servicios
+      ansible.windows.win_service_info:
+        name: "{{ item }}"
+      loop: "{{ services }}"
+      register: service_status
+
+    - name: Mostrar estado
+      ansible.builtin.debug:
+        msg: "{{ item.item }}|{{ item.services[0].state | default('unknown') }}"
+      loop: "{{ service_status.results }}"
+      loop_control:
+        label: "{{ item.item }}"

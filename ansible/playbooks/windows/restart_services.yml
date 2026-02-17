@@ -1,0 +1,28 @@
+# Playbook para reinicio controlado de servicios Windows
+
+---
+- name: Reinicio de servicios Windows
+  hosts: "{{ target_host }}"
+  gather_facts: no
+  timeout: 240
+
+  tasks:
+    - name: Validar que se recibieron servicios
+      ansible.builtin.fail:
+        msg: "No se especificaron servicios para reiniciar"
+      when: services is not defined or services | length == 0
+
+    - name: Reiniciar servicios solicitados
+      ansible.windows.win_service:
+        name: "{{ item }}"
+        state: restarted
+      loop: "{{ services }}"
+      register: restart_result
+      timeout: 180
+
+    - name: Mostrar resultado de cada servicio
+      ansible.builtin.debug:
+        msg: "Servicio {{ item.item }}: OK"
+      loop: "{{ restart_result.results }}"
+      loop_control:
+        label: "{{ item.item }}"

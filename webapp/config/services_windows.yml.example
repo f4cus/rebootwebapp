@@ -1,0 +1,36 @@
+# /opt/rebootwebapp/config/services_windows.yml
+# Configuración de servicios por grupo/tab
+# Copiar a services_windows.yml y ajustar valores
+
+auto_refresh_segundos: 30
+
+grupos:
+  - id: grupo1
+    nombre: "Grupo 1"
+    icono: "🌐"
+    nombre_operacion: "Reiniciar Grupo 1"
+    servers:
+      - hostname: SERVER01.dominio.local
+        display_name: "SERVER01"
+        services:
+          - name: NombreTecnicoServicio
+            display_name: "Nombre Visible del Servicio"
+          - name: OtroServicio
+            display_name: "Otro Servicio"
+
+      - hostname: SERVER02.dominio.local
+        display_name: "SERVER02"
+        services:
+          - name: NombreTecnicoServicio
+            display_name: "Nombre Visible del Servicio"
+
+  - id: grupo2
+    nombre: "Grupo 2"
+    icono: "🏦"
+    nombre_operacion: "Reiniciar Grupo 2"
+    servers:
+      - hostname: SERVER03.dominio.local
+        display_name: "SERVER03"
+        services:
+          - name: ServicioGrupo2
+            display_name: "Servicio del Grupo 2"

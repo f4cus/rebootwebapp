@@ -1,0 +1,14 @@
+# /opt/rebootwebapp/config/azure_auth.yml
+# Configuración de Azure AD para autenticación
+# Copiar a azure_auth.yml y ajustar valores
+
+client_id: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+tenant_id: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+client_secret: "your-client-secret-here"
+redirect_uri: "https://your-app-url.domain.com/"
+scope:
+  - "User.Read"
+  - "GroupMember.Read.All"
+
+# Grupo de Azure AD autorizado (Object ID)
+authorized_group_id: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"

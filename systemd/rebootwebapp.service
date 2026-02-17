@@ -1,0 +1,15 @@
+[Unit]
+Description=Reboot Web App - Streamlit UI
+After=network.target
+
+[Service]
+Type=simple
+User=your_user
+Group=your_user
+WorkingDirectory=/opt/rebootwebapp
+ExecStart=/opt/rebootwebapp/venv/bin/streamlit run app.py --server.port 8501 --server.address 127.0.0.1 --server.headless true
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
