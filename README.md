@@ -233,7 +233,7 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 ## 👨‍💻 Autor
 
-Desarrollado por [Tu Nombre]
+Desarrollado por @f4cus
 
 ---
 
